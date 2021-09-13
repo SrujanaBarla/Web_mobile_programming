@@ -1,29 +1,29 @@
-let score = 0;
-let cpu_score = 0;
+let result = 0;
+let machine_result = 0;
 
 const onclick = ({currentTarget}) => {
-    // picks a random choice for the cpu
-    const cpu = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
-    document.getElementById("cpu_option").src = `images/${cpu}.png`;
+    // picks a random choice for the machine
+    const machine = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
+    document.getElementById(`machine_turn`).src = `Images/${machine}.jpg`;
 
-    // updates score
+    // updates results
     const winsAgainst = {rock: "scissors", paper: "rock", scissors: "paper"};
-    const player = currentTarget.id;
-    if (player === cpu) {
-    } else if (winsAgainst[player] === cpu) {
-        score++;
+    const human = currentTarget.id;
+    if (human === machine) {
+    } else if (winsAgainst[human] === machine) {
+        result++;
     } else {
-        cpu_score++;
+        machine_result++;
     }
 
-    document.getElementById("option").src = `images/${player}.png`;
-    document.getElementById("score").innerText = score.toString();
-    document.getElementById("cpu_score").innerText = cpu_score.toString();
+    document.getElementById("human_turn").src = `Images/${human}.jpg`;
+    document.getElementById("result").innerText = result.toString();
+    document.getElementById("machine_result").innerText = machine_result.toString();
 
     // reset
     setTimeout(() => {
-        document.getElementById("option").src = "images/rocking.gif";
-        document.getElementById("cpu_option").src = "images/rocking.gif";
+        document.getElementById("human_turn").src = "Images/rock.gif";
+        document.getElementById("machine_turn").src = "Images/rock.gif";
     }, 1500);
 };
 
