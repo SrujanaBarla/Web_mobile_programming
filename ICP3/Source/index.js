@@ -22,8 +22,8 @@ const onclick = ({currentTarget}) => {
 
     // reset
     setTimeout(() => {
-        document.getElementById("human_turn").src = "Images/rock.gif";
-        document.getElementById("machine_turn").src = "Images/rock.gif";
+        document.getElementById("human_turn").src = "Images/All.gif";
+        document.getElementById("machine_turn").src = "Images/All.gif";
     }, 1500);
 };
 
