@@ -22,9 +22,9 @@ const onclick = ({currentTarget}) => {
 
     // reset
     setTimeout(() => {
-        document.getElementById("human_turn").src = "Images/All.gif";
-        document.getElementById("machine_turn").src = "Images/All.gif";
-    }, 1500);
+        document.getElementById("human_turn").src = "Images/rock.jpg";
+        document.getElementById("machine_turn").src = "Images/rock.jpg";
+    }, 15000);
 };
 
 ["rock", "paper", "scissors"].forEach(id => document.getElementById(id).addEventListener("click", onclick));
