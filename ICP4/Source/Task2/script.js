@@ -11,10 +11,9 @@ function showUser(user) {
     $('#results, #results .result, #results .card-header').removeClass("collapse");
     $('.avatar').html("<img style='width: 170px; height: 170px;' src='" + user.actor.avatar_url + "' alt='Avatar'>")
     const profile = "https://github.com/" + encodeURIComponent(user.actor.login);
-    $('.information').html("<a href='" + profile + "'>" + user.actor.login + "</a>")
+    $('.information').html("<a href='" + profile + "'>" + user.actor.login + ">" +user.id + "</a>")
     $('.name').text(user.actor.login)
-    $('.info').text(user.id)
-    $('#last').text(user.created_at)
+    $('.id').text(user.id)
 
 }
 function noSuchUser(username) {
@@ -22,8 +21,7 @@ function noSuchUser(username) {
     $('#results, #results .card-header').removeClass("collapse");
     $('#results .result').addClass("collapse");
     $('.name').text("We couldn't find any users matching : "+ username);
-    $("#profile").show();
-    $("#id").show();
+    
 }
 function showRepos(repos) {
     let output = $('.repos').empty();
