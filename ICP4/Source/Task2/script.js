@@ -14,40 +14,18 @@ function showUser(user) {
     $('.information').html("<a href='" + profile + "'>" + user.actor.login + "</a>")
     $('.name').text(user.actor.login)
     $('#id').text(user.actor.id)
-    $('#last').text(user.created_at)
+    $('#last').text(user.actor.last)
 
-    // returns the length of followers
-    $.get(`https://api.github.com/users/${user.actor.login}/followers`).done(follower => {
-        $('#followers').empty().append($('<span/>').text("Followers: " + follower.length.toString()).addClass('badge badge-primary mr-1'));
-    })
-
-    // returns the length of followings
-    $.get(`https://api.github.com/users/${user.actor.login}/following`).done(following => {
-        $('#following').empty().append($('<span/>').text("Following: " + following.length.toString()).addClass('badge badge-success mr-1'));
-    })
-
-    // returns user's company
-    $.get(`https://api.github.com/users/${user.actor.login}`).done(user => {
-        $('#company').empty().append($('<span/>').text(user.company));
-    })
-
-    // returns user's blog
-    $.get(`https://api.github.com/users/${user.actor.login}`).done(user => {
-        $('#blog').empty().append($('<span/>').text(user.blog));
-    })
-
-    // returns length of the repositories
-    $.get(`https://api.github.com/users/${user.actor.login}`).done(user => {
-        $('#rep').empty().append($('<span/>').text(user.public_repos));
-    })
 
 }
 
+
 function noSuchUser(username) {
     //3. set the elements such that a suitable message is displayed
-    $('#results, #results .card-header').removeClass("collapse");
+    $('#results, #results').removeClass("collapse");
     $('#results .result').addClass("collapse");
     $('.name').text("We couldn't find any users matching : "+ username);
+    $("#profile").show();
 }
 function showRepos(repos) {
     let output = $('.repos').empty();
