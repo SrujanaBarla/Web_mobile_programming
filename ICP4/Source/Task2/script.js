@@ -14,7 +14,6 @@ function showUser(user) {
     $('.information').html("<a href='" + profile + "'>" + user.actor.login +"   " + user.actor.id + "</a>");
     $('.name').text(user.actor.login);
     $('.id').text(user.actor.id);
-    $('#last').text(user.created_at)
 
 }
 function noSuchUser(username) {
