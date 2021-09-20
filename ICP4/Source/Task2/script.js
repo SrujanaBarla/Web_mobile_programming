@@ -9,11 +9,11 @@ function getGithubInfo(user) {
 // display the specified user's profile
 function showUser(user) {
     $('#results, #results .result, #results .card-header').removeClass("collapse");
-    $('.avatar').html("<img style='width: 170px; height: 170px;' src='" + user.actor.avatar_url + "' alt='Avatar'>")
+    $('.avatar').html("<img style='width: 170px; height: 170px;' src='" + user.actor.avatar_url + "' alt='Avatar'>");
     const profile = "https://github.com/" + encodeURIComponent(user.actor.login);
-    $('.information').html("<a href='" + profile + "'>" + user.actor.login + ">" +user.id + "</a>")
-    $('.name').text(user.actor.login)
-    $('.id').text(user.id)
+    $('.information').html(`<a href='${profile}'>${user.actor.login}${+user.id}</a>`);
+    $('.name').text(user.actor.login);
+    $('.id').text(user.login);
 
 }
 function noSuchUser(username) {
@@ -21,7 +21,7 @@ function noSuchUser(username) {
     $('#results, #results .card-header').removeClass("collapse");
     $('#results .result').addClass("collapse");
     $('.name').text("We couldn't find any users matching : "+ username);
-    
+
 }
 function showRepos(repos) {
     let output = $('.repos').empty();
