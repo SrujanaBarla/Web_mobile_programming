@@ -15,17 +15,33 @@
             Search Github Users
         </h3>
         <div class="card-body">
-    <div class="search">
-        <p>Username: <input id="username" placeholder="Enter the required profile name" type="text"/></p>
-    </div>
+            <p>Enter a username to find a user profile from GitHub</p>
+            <div class="search">
+                <p>Username: <input id="username" placeholder="Enter the required profile name" type="text"/></p>
             </div>
+        </div>
     </div>
-    <div id="profile">
-        <h2>Profile Info</h2>
-        <div class="avatar"></div>
-        <div class="information"></div>
+    <div id="results" class="card collapse">
+        <h2 class="card-header collapse">
+            Result: <span class="name"></span></h2>
+        <div class="card-body collapse result">
+            <div class="float-left mr-3">
+                <div class="avatar"></div>
+                <div class="information"></div>
+            <span id="followers"></span>
+            <span id="following"></span>
+            </div>
+
+            <div class="card-header collapse result">
+                Repositories
+            </div>
+            <div class="card-body collapse result">
+                <div class="repos"></div>
+            </div>
+        </div>
     </div>
 </div>
+
 
 </body>
 </html>
