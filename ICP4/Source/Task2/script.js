@@ -11,9 +11,9 @@ function showUser(user) {
     $('#results, #results .result, #results .card-header').removeClass("collapse");
     $('.avatar').html("<img style='width: 170px; height: 170px;' src='" + user.actor.avatar_url + "' alt='Avatar'>");
     const profile = "https://github.com/" + encodeURIComponent(user.actor.login);
-    $('.information').html("<a href='" + profile + "'>" + user.actor.login +  + user.id + "</a>");
+    $('.information').html("<a href='" + profile + "'>" + user.actor.login +"   " + user.actor.id + "</a>");
     $('.name').text(user.actor.login);
-    $('.id').text(user.id);
+    $('.id').text(user.actor.id);
 
 }
 function noSuchUser(username) {
