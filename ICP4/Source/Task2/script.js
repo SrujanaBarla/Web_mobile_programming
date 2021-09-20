@@ -13,8 +13,7 @@ function showUser(user) {
     const profile = "https://github.com/" + encodeURIComponent(user.actor.login);
     $('.information').html("<a href='" + profile + "'>" + user.actor.login + "</a>")
     $('.name').text(user.actor.login)
-    const {id} = user.actor;
-    $('#id').text(id)
+    $('.info').text(user.id)
     $('#last').text(user.created_at)
 
 }
@@ -24,6 +23,7 @@ function noSuchUser(username) {
     $('#results .result').addClass("collapse");
     $('.name').text("We couldn't find any users matching : "+ username);
     $("#profile").show();
+    $("#id").show();
 }
 function showRepos(repos) {
     let output = $('.repos').empty();
