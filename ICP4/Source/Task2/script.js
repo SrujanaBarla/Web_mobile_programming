@@ -14,15 +14,15 @@ function noSuchUser(username) {
 $(document).ready(function () {
     $(document).on('keypress', '#username', function (e) {
         //check if the enter(i.e return) key is pressed
-        if (e.which == 13) {
+        if (e.which === 13) {
             //get what the user enters
             username = $(this).val();
             //reset the text typed in the input
             $(this).val("");
-            //get the user's information and store the respsonse
+            //get the user's information and store the response
             response = getGithubInfo(username);
             //if the response is successful show the user's details
-            if (response.status == 200) {
+            if (response.status === 200) {
                 showUser(JSON.parse(response.responseText));
                 //else display suitable message
             } else {
