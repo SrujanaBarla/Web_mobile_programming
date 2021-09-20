@@ -9,7 +9,7 @@ body {
 header {
     text-align: center;
     background-color: #fdfdfd;
-    border-bottom: 1px solid #e5e2e0;
+    border-bottom: 1px solid #a7494c;
 }
 
 #logo {
@@ -47,8 +47,16 @@ input[type='text'] {
     margin: 50px auto;
 }
 
+#headings {
+    text-align: center;
+    margin-top: 10px;
+}
 h2 {
     padding: 5px;
+    text-align: left;
+    background-color: #fdfdfd;
+    border-bottom: 1px solid #e5e2e0;
+    font-size: 20px;
 }
 
 .profile {
@@ -64,4 +72,10 @@ h2 {
 
 .profile:hover {
     background-color: #b300b3;
+}
+@media (max-width: 600px) {
+    nav,article{
+        width: 100%;
+        height: auto;
+    }
 }
