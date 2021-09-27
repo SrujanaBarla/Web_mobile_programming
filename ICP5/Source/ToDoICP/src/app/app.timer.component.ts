@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppTimerComponent implements OnInit {
   time = '';
-  target = '2020-09-27T20:49:48';
+  target = '2021-09-28T21:39:16';
   seconds = '00';
 
   private readonly update = () => {

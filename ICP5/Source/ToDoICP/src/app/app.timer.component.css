@@ -9,7 +9,7 @@
 input {
   background: transparent;
   text-align: center;
-  border: 2px dashed lightskyblue;
+  border: 2px dashed palegreen;
   outline: none;
   border-radius: 20px;
   padding: 4px 20px;
@@ -20,7 +20,7 @@ input {
 .countdown {
   font-size: 45px;
   height: 100px;
-  color: #afeeee;
+  color: #afaaaa;
 }
 
 #seconds {
